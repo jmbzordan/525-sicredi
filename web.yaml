@@ -1,0 +1,6 @@
+---
+
+- name: playboook para role web
+  hosts: all
+  roles:
+   - web

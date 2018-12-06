@@ -1,0 +1,9 @@
+---
+
+- name: instalacao de pacotes padroes
+  package:
+   name: 
+    - htop
+    - vim
+    - cowsay
+    - figlet

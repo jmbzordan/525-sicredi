@@ -1,0 +1,40 @@
+---
+## criar uma nova playbook que ira instalar os pacotes:
+#- "epel-release" e "vim" na máquina automation
+#- "vim" e "htop" nas maquinas docker de devops
+
+#3 usuarios nas 3 maquinas: devops, developer, {{seunome}}
+
+- name: playbook para o exercicio
+  hosts: "{{maquina}}"
+  var:
+   - maquina: null
+   - seunome: null
+   - pack: null
+  tasks:
+   - name: instala pacote vim
+     package:
+      name: vim
+
+  tasks:
+   - name: instala pacote x
+     package:
+      name: "{{pack}}"
+
+  tasks:
+   - name: cria usuarios
+     user:
+      name: devops
+      state: present
+
+  tasks:
+   - name: cria usuarios
+     user:
+      name: developer
+      state: present
+
+  tasks:
+   - name: cria usuarios
+     user:
+      name: "{{seunome}}"
+      state: present

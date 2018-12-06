@@ -1,0 +1,12 @@
+---
+
+- name: puppetserver na maquina devops
+  package:
+   name: puppetserver
+   update_cache: yes
+  when: ansible_hostname == "devops"
+
+- name: puppetagent em todas as maquinas
+  package:
+   name: puppet-agent
+   update_cache: yes 
