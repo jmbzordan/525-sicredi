@@ -1,6 +1,0 @@
----
-
-- name: playbook da role puppet
-  hosts: all
-  roles:
-   - puppet
