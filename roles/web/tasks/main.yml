@@ -1,0 +1,16 @@
+---
+# tasks file for web
+# garantir que o apache esteja rodando em todas as maquinas e que tenha conteudo tal que esta no quadro
+
+- name: pacotes do apache
+  include: apache.yaml
+
+- name: stop no firewall
+  include: firewall.yaml
+
+- name: copia conteudo para arquivo
+  include: copia.yaml
+
+- name: start apache
+  include: start.yaml
+

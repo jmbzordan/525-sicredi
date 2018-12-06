@@ -1,0 +1,7 @@
+---
+
+- name: arquivo de configuracao com variaveis
+  template:
+   src: templates/index
+   dest: /var/www/html/index.html
+

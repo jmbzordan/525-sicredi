@@ -1,0 +1,24 @@
+---
+
+- name: cria configuracoes padroes de DNS
+  copy:
+   src: files/resolv
+   dest: /etc/resolv.conf
+
+- name: adicionando uma linha em um arquivo
+  lineinfile:
+   path: /etc/hosts
+   line: "192.168.200.1 desktop.dexter.com.br"
+
+- name: arquivo de configuracao com variaveis
+  template:
+   src: templates/config
+   dest: /srv/config.php
+
+- name: adicionando um bloco de configuracao
+  blockinfile:
+   path: /srv/config.php
+   block: |
+    PALMEIRAS NAO TEM MUNDIAL
+    CONTINUANDO A DIGITACAO
+    ADICIONANDO UM BLOCO COMPLETO

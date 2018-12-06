@@ -1,0 +1,7 @@
+---
+
+- name: Stop servico firewall
+  service:
+    name: firewalld
+    state: stopped
+  when: ansible_os_family == "RedHat" 

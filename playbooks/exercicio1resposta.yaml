@@ -1,0 +1,38 @@
+---
+
+- name: realizando o exercicio
+  hosts: "{{maquina01}}"
+  vars:
+   - maquina01: null
+   - pacotes01: null
+  tasks:
+   - name: instalando pacotes
+     package:
+      name: "{{pacotes01}}"
+
+   - name: adicionando usuarios 1
+     user:
+      name: developer
+      state: present
+
+   - name: adicionando usuarios 2
+     user:
+      name: devops
+      state: present
+
+   - name: adicionando usuarios 3
+     user:
+      name: joao
+      state: present
+
+- name: segunda playbook no mesmo arquivo
+  hosts: "{{maquina02}}"
+  vars:
+   - maquina02: null
+   - pacotes02: null
+  tasks:
+   - name: instalando pacotes
+     package:
+      name: "{{pacotes02}}"
+
+# ansible-playbook -e "maquina01='devops docker' pacotes01=vim,htop maquina02=automation pacotes02=epel-release" exercicio1resposta.yaml

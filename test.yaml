@@ -1,0 +1,6 @@
+---
+
+- name: playbook que chama a role test
+  hosts: all
+  roles:
+   - test
