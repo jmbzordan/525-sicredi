@@ -1,6 +1,0 @@
----
-
-- name: chamando minha primeira role
-  hosts: all
-  roles:
-   - initial
